@@ -46,3 +46,14 @@
 		font-size: min(4.5vw, 1.5rem);
 	}
 }
+
+.tip {
+	padding-bottom: var(--body-px);
+	border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.5);
+	margin-bottom: var(--body-px);
+	text-align: center;
+
+	a {
+		display: inline-flex;
+	}
+}
