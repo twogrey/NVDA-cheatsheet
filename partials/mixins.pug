@@ -1,0 +1,57 @@
+mixin icons-sep
+	div.icons-sep
+		svg(aria-hidden="true")
+			use(xlink:href="#icon-a11y")
+		svg(aria-hidden="true")
+			use(xlink:href="#icon-volume")
+		svg(aria-hidden="true")
+			use(xlink:href="#icon-keyboard")
+			
+mixin titleCat(title)
+	.cat__title
+		h2(id=title.split(' ').join('_'), class="cat__label")
+			a(href="#"+title.split(' ').join('_'), tabindex="-1", aria-hidden="true", class="cat__anchor")
+				svg
+					use(xlink:href="#icon-link")
+			= title
+			
+mixin article(name, icon, keysDesktop, keysLaptop, infos)
+	- var id = name.split(' ').join('_');
+	article(class="command js-command", aria-labelledby=id)
+		div(class="command__content") 
+			svg(aria-hidden="true", class="command__icon")
+				use(xlink:href="#icon-"+icon)
+			figure
+				figcaption(id=id)= name
+				.command__keys.keys.js-keys&attributes({'data-device="desktop"': keysLaptop && keysLaptop.length>0})
+					each key, index in keysDesktop
+						kbd= key
+						if index < (keysDesktop.length - 1)
+							| +
+				if keysLaptop
+					.command__keys.keys(data-device="laptop", style="display: none")
+						each key, index in keysLaptop
+							kbd= key
+							if index < (keysLaptop.length - 1)
+								| +
+		if infos
+			p= infos
+		.dropdown.dropdown--abs.command__dropdown
+			button(
+				type="button", 
+				class="dropdown__toggle js-dropdown",
+				aria-expanded="false",
+				title="Options de partage")
+				svg(aria-hidden="true")
+					use(xlink:href="#icon-share") 
+			ul.dropdown__content(role="list")
+				li
+					a(data-href="https://twitter.com/intent/tweet?text=Commande%20clavier%20%23NVDA.%0A"+name.replace(/ /g, '%20')+"%20%3A%20placeholder-keys%20(sur%20placeholder-device)%0A(%20via%20placeholder-url%20%40twogrey%20)%0A%23accessibilité%20%23a11y", class="dropdown__item js-share", rel="noopener noreferrer nofollow", href="#", target="_blank")
+						svg(aria-hidden="true")
+							use(xlink:href="#icon-twitter")
+						| Partager cette commande clavier sur Twitter
+				li
+					a(data-href="mailto:?subject=Commande%20clavier%20NVDA%20%3A%20"+name.replace(/ /g, '%20')+"&body="+name.replace(/ /g, '%20')+"%20%3A%20placeholder-keys%20(sur%20placeholder-device)%0D%0A%0D%0ACopi%C3%A9%20depuis%20le%20site%20placeholder-url", href="#", class="dropdown__item js-share")
+						svg(aria-hidden="true")
+							use(xlink:href="#icon-mail")
+						| Partager cette commande clavier par mail

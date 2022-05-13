@@ -1,0 +1,18 @@
+:root {
+	--small-mw: 50rem;
+	--body-px: min(5vw, 1.75rem);
+	--color-primary: #432d5a;
+	--color-primary-light: #b299cc;
+	--color-primary-lightest: #f2eef6;
+	--color-grey-light: #ddd;
+	--white: #fff;
+	--bg: #f1f1f1;
+	--text-color: #222;
+}
+
+:root[data-theme='dark'] {
+	--color-primary-dark: #432d5a;
+	--color-primary: #b299cc;
+	--bg: #333;
+	--text-color: #fff;
+}

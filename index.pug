@@ -1,0 +1,89 @@
+doctype html
+html(lang="fr", data-theme="light")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Fiche mémo des commandes clavier sur NVDA
+		meta(name="description", content="La liste des commandes claviers sur NVDA pour une utilisation dans un contexte de navigation web")
+		link(rel="icon", href="favicon.ico", sizes="any")
+		link(rel="icon", href="favicon.svg", type="image/svg+xml")
+		link(rel="apple-touch-icon", href="apple-touch-icon.png")
+		link(rel="preconnect", href="https://fonts.googleapis.com")
+		link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+		link(href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=fallback", rel="stylesheet")
+		link(rel="stylesheet", href="assets/css/styles.min.css")
+		script(src="assets/js/theme.min.js")
+	body
+ 
+		include partials/mixins.pug
+
+		div(style="display: none", aria-hidden="true")
+			include assets/img/sprite.svg
+			
+		include partials/header.pug
+
+		main(role="main", id="main", tabIndex="-1")
+			aside(aria-label="Options")
+				div(role="group", class="switch switch--device", aria-labelledby="device-label")
+					div(id="device-label") Afficher les commandes pour :
+					div.switch__content
+						input(type="radio", name="device", id="device-desktop", value="desktop", class="sr-only", checked)
+						label(for="device-desktop") 
+							svg(aria-hidden="true")
+								use(xlink:href="#icon-desktop")
+							| Ordinateur de bureau
+						input(type="radio", name="device", id="device-laptop", value="laptop", class="sr-only")
+						label(for="device-laptop") 
+							svg(aria-hidden="true")
+								use(xlink:href="#icon-laptop")
+							| Ordinateur portable
+			section.cat
+				+titleCat('Commandes de bases')
+				+article('Démarrer ou redémarrer NVDA', 'rocket', ['Ctrl', 'Alt', 'n'], false, 'Ce raccourci est spécifique à Windows. Il ne peut donc être réassigné dans la configuration des gestes de commandes.')
+				+article('Quitter NVDA', 'ear-off', ['NVDA', 'q'])
+				+article('Ouvrir le menu NVDA', 'bars', ['NVDA', 'n'], false, 'Pour accéder aux préférences, outils, etc.')
+				+article('Arrêt de la parole', 'stop', ['Ctrl'])
+				+article('Pause de la parole', 'pause', ['Maj'], false, 'Un second appui reprend là où la parole s\'arrêtée.')
+				+article('Activer ou désactiver le mode veille', 'bed', ['NVDA', 'Maj', 'S'], ['NVDA', 'Maj', 'Z'], 'Pour l\'application en cours.')
+			section.cat
+				+titleCat('Annonce des informations systèmes')
+				+article('Annonce de l\'heure ou de la date', 'calendar-time', ['NVDA', 'F12'], false, 'Un appui pour l\'heure. Deux appuis pour la date.')
+				+article('Annonce de l\'état de la batterie', 'battery', ['NVDA', 'Maj', 'b'], false, 'Indique également si l\'adaptateur secteur est connecté.')
+			section.cat
+				+titleCat('Navigation standard')
+				+article('Elément focusable suivant', 'tab', ['Tab']) 
+				+article('Elément focusable précédent', 'tab', ['Maj', 'Tab']) 
+				+article('Elément suivant', 'arrow-down', ['↓']) 
+				+article('Elément précédent', 'arrow-up', ['↑']) 
+				+article('Début du conteneur', 'corner-left-up', [','])
+				+article('Après la fin du conteneur', 'corner-left-down-double', ['Maj', ',']) 
+				+article('Annonce le focus courant', 'target', ['NVDA', 'Tab'])
+				+article('Lecture de la ligne courante', 'terminal', ['NVDA', '↑'], ['NVDA', 'l']) 
+			section.cat
+				+titleCat('Navigation dans les tableaux')
+				+article('Tableau suivant', 'arrow-autofit-down', ['t']) 
+				+article('Tableau précédent', 'arrow-autofit-up', ['Maj', 't'])
+				+article('Colonne précédente', 'arrow-left-circle', ['Ctrl', 'Alt', '←'])
+				+article('Colonne suivante', 'arrow-right-circle', ['Ctrl', 'Alt', '→'])
+				+article('Ligne précédente', 'arrow-up-circle', ['Ctrl', 'Alt', '↑'])
+				+article('Ligne suivante', 'arrow-down-circle', ['Ctrl', 'Alt', '↓'])
+			section.cat
+				+titleCat('Navigation vers le prochain élément spécifique')
+				+article('Titre', 'h', ['h'])
+				+article('Liste', 'list', ['l'])
+				+article('Elément de liste', 'list-element', ['i'])
+				+article('Lien', 'link', ['k']) 
+				+article('Champ de formulaire', 'forms', ['f']) 
+				+article('Bouton', 'rectangle', ['b']) 
+				+article('Image', 'photo', ['g'], false, 'Ignore les images n\'ayant pas d\'alternative textuelle.') 
+				+article('Section', 'section', ['d']) 
+
+		+icons-sep
+
+		include partials/about.pug
+
+		include partials/footer.pug
+
+		script(src="assets/js/computed-styles.min.js", defer)
+		script(src="assets/js/dropdown.min.js", defer)
+		script(src="assets/js/device.min.js", defer)

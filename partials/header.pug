@@ -1,0 +1,29 @@
+header(role="banner", class="header")
+	h1.header__title 
+		| Fiche mémo des commandes clavier sur 
+		abbr(title="NonVisual Desktop Access") NVDA
+	div(role="group", class="switch header__aside", aria-labelledby="theme-label")
+		div(id="theme-label") Choix du thème :
+		div.switch__content
+			input(type="radio", name="theme", id="theme-light", value="light", class="sr-only" ,checked)
+			label(for="theme-light") 
+				svg(aria-hidden="true")
+					use(xlink:href="#icon-sun")
+				| Clair
+			input(type="radio", name="theme", id="theme-dark", value="dark", class="sr-only")
+			label(for="theme-dark")
+				svg(aria-hidden="true")
+					use(xlink:href="#icon-moon")
+				| Sombre
+	div.header__intro(data-computed-style="height", data-computed-style-name="intro", data-computed-style-root)
+		nav(role="navigation", aria-label="Menu de navigation principal")
+			ul(role="list")
+				li
+					a(href="#main") Aller au contenu principal
+				li
+					a(href="#about") À propos de ce site
+				li
+					a(href="#author") À propos de l'auteur
+		+icons-sep
+		p Vous trouverez ici la liste des commandes claviers sur NVDA pour une utilisation dans un contexte de navigation web.
+		p Pour une liste exhaustive, consultez le <a href="https://www.nvda-fr.org/doc/keyCommands.html" target="_blank" rel="noopener noreferrer">résumé des commandes sur nvda-fr.org <span class="external">(lien externe)</span></a>.
