@@ -4,6 +4,12 @@
  * 
  -------------------------------------------- */
 
+@font-face {
+	font-family: Arial;
+	src: local('Arial');
+	size-adjust: 94.5%;
+}
+
 html {
 	box-sizing: border-box;
 	font-family: 'Titillium web', Arial, sans-serif;
@@ -11,6 +17,7 @@ html {
 	background-color: var(--bg);
 	color: var(--text-color);
 }
+
 
 /** --------------------------------------------
  * 
