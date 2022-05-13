@@ -9,6 +9,6 @@ Si vous rencontrez un problème de consultation ou d'utilisation avec ce site, o
 
 ## Crédit des icones
 
-Les icones utilisées pour illustrer les commandes proviennent toutes de [tablericons.com](tablericons.com).
+Les icones utilisées pour illustrer les commandes proviennent toutes de [tablericons.com](https://tablericons.com).
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/twogrey)
