@@ -5,7 +5,7 @@ let theme = localStorage.getItem('data-theme');
 
 if(prefersDark.matches && (!theme || theme === 'null')) {
 	changeTheme('dark');
-} else {
+} else if(theme) {
 	changeTheme(localStorage.getItem('data-theme'));
 }
 
@@ -17,7 +17,7 @@ function changeTheme(theme) {
 document.addEventListener("DOMContentLoaded", () => {
 	if(prefersDark.matches && (!theme || theme === 'null')) {
 		document.querySelector('[name="theme"][value="dark"]').checked = true;
-	} else {
+	} else if(theme) {
 		document.querySelector('[name="theme"][value="'+theme+'"]').checked = true;
 	}
 
