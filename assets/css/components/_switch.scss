@@ -121,7 +121,7 @@
 				height: var(--h);
 				margin-right: var(--gap);
 				border-radius: 50rem;
-				background-color: var(--color-primary-light);
+				background-color: var(--color-primary);
 				cursor: pointer;
 				outline: var(--outline, none);
 				outline-offset: 0.25rem;
@@ -139,6 +139,10 @@
 				cursor: pointer;
 				transform: translateX(var(--tX)) translateY(-50%);
 				transition: transform 0.2s;
+
+				[data-theme='dark'] & {
+					background-color: var(--color-primary-dark);
+				}
 			}
 		}
 	}
