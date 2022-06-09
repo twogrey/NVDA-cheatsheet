@@ -48,6 +48,11 @@
 		margin-top: calc(var(--gap) * 1.5);
 		margin-bottom: 0;	
 	}
+
+	.letter {
+		font-size: 1.25em;
+		color: var(--color-primary);
+	}
 	
 	&__dropdown {
 		top: var(--toggle-o);

@@ -35,7 +35,7 @@ mixin article(name, icon, keysDesktop, keysLaptop, infos)
 							if index < (keysLaptop.length - 1)
 								| +
 		if infos
-			p= infos
+			p!= infos
 		.dropdown.dropdown--abs.command__dropdown
 			button(
 				type="button", 

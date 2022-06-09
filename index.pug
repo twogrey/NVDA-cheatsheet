@@ -72,6 +72,18 @@ html(lang="fr", data-theme="light")
 				+article('Après la fin du conteneur', 'corner-left-up', [','])
 				+article('Annonce le focus courant', 'target', ['NVDA', 'Tab'])
 				+article('Lecture de la ligne courante', 'terminal', ['NVDA', '↑'], ['NVDA', 'l']) 
+			section.cat
+				+titleCat('Navigation vers le prochain élément spécifique')
+				p.cat__note Notez que la plupart des commandes de cette catégorie font référence à la première lettre du nom anglais de l'élément concerné.
+				+article('Titre', 'h', ['h'], false, 'H pour <span translate="en"><b class="letter">H</b>eading</span>.')
+				+article('Titre de niveau 1', 'h1', ['1'], false, 'Ou 2 pour le prochain titre de niveau 2, jusqu\'à un maximum de 6 niveaux.')
+				+article('Liste', 'list', ['l'], false, 'L pour <span translate="en"><b class="letter">L</b>ist</span>.')
+				+article('Elément de liste', 'list-element', ['i'], false, 'I pour List <span translate="en"><b class="letter">I</b>tem</span>.')
+				+article('Lien', 'link', ['k']) 
+				+article('Champ de formulaire', 'forms', ['f'], false, 'F pour <span translate="en"><b class="letter">F</b>orm</span>.') 
+				+article('Bouton', 'rectangle', ['b'], false, 'B pour <span translate="en"><b class="letter">B</b>utton</span>.') 
+				+article('Image', 'photo', ['g'], false, 'G pour <span translate="en"><b class="letter">G</b>raphic</span>. <br>Ignore les images n\'ayant pas d\'alternative textuelle.') 
+				+article('Section', 'section', ['d']) 
 			section.cat 
 				+titleCat('Navigation dans les tableaux')
 				+article('Tableau suivant', 'arrow-autofit-down', ['t']) 
@@ -80,17 +92,6 @@ html(lang="fr", data-theme="light")
 				+article('Colonne suivante', 'arrow-right-circle', ['Ctrl', 'Alt', '→'])
 				+article('Ligne précédente', 'arrow-up-circle', ['Ctrl', 'Alt', '↑'])
 				+article('Ligne suivante', 'arrow-down-circle', ['Ctrl', 'Alt', '↓'])
-			section.cat
-				+titleCat('Navigation vers le prochain élément spécifique')
-				+article('Titre', 'h', ['h'])
-				+article('Titre de niveau 1', 'h1', ['1'], false, 'Ou 2 pour le prochain titre de niveau 2, jusqu\'à un maximum de 6 niveaux.')
-				+article('Liste', 'list', ['l'])
-				+article('Elément de liste', 'list-element', ['i'])
-				+article('Lien', 'link', ['k']) 
-				+article('Champ de formulaire', 'forms', ['f']) 
-				+article('Bouton', 'rectangle', ['b']) 
-				+article('Image', 'photo', ['g'], false, 'Ignore les images n\'ayant pas d\'alternative textuelle.') 
-				+article('Section', 'section', ['d']) 
 
 		+icons-sep
 

@@ -145,8 +145,11 @@ a .external {
   text-decoration: none;
 }
 
-p:not(:last-child) {
+p:where(:not(:last-child)) {
   margin-bottom: 1em;
+}
+p b {
+  font-weight: 700;
 }
 
 .switch {
@@ -329,6 +332,10 @@ p:not(:last-child) {
 .command p {
   margin-top: calc(var(--gap) * 1.5);
   margin-bottom: 0;
+}
+.command .letter {
+  font-size: 1.25em;
+  color: var(--color-primary);
 }
 .command__dropdown {
   top: var(--toggle-o);
@@ -612,6 +619,10 @@ nav a {
 }
 .cat__anchor:hover {
   color: inherit;
+}
+.cat__note {
+  grid-column: 1/-1;
+  margin: 0;
 }
 
 .about {
