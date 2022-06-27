@@ -15,9 +15,9 @@ mixin titleCat(title)
 					use(xlink:href="#icon-link")
 			= title
 			
-mixin article(name, icon, keysDesktop, keysLaptop, infos)
+mixin article(name, icon, keysDesktop, keysLaptop, infos, style)
 	- var id = name.split(' ').join('_');
-	article(class="command js-command", aria-labelledby=id)
+	article(class="command js-command", aria-labelledby=id, style=style)
 		div(class="command__content") 
 			svg(aria-hidden="true", class="command__icon")
 				use(xlink:href="#icon-"+icon)
