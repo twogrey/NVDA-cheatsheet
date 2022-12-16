@@ -10,8 +10,8 @@ mixin icons-sep
 mixin titleCat(title)
 	.cat__title
 		h2(id=title.split(' ').join('_'), class="cat__label")
-			a(href="#"+title.split(' ').join('_'), tabindex="-1", aria-hidden="true", class="cat__anchor")
-				svg
+			a(href="#"+title.split(' ').join('_'), tabindex="-1", aria-hidden="true", class="cat__anchor", aria-label="Ancre : "+title)
+				svg(aria-hidden="true")
 					use(xlink:href="#icon-link")
 			= title
 			
